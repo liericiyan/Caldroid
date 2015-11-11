@@ -1020,7 +1020,9 @@ public class CaldroidFragment extends DialogFragment {
      */
     protected void refreshMonthTitleTextView() {
         // Refresh title view
-        long millis = Calendar.getInstance().getTimeInMillis();
+        Calendar c2 = Calendar.getInstance();
+        c2.set(year, month - 1, 15, 0, 0, 0);
+        long millis = c2.getTimeInMillis();
 
         // This is the method used by the platform Calendar app to get a
         // correctly localized month name for display on a wall calendar
